@@ -1,19 +1,15 @@
-name: ali
+name: Keep Workflow Running on Website
 
-on:
-  workflow_dispatch:
+on: [push]
 
 jobs:
-  build:
-    name: Start Building...
+  open-website:
     runs-on: windows-latest
-    timeout-minutes: 888
-    
+
     steps:
       - name: Downloading & Installing Essentials
-        run: |
-                Start-Process "microsoft-edge:https://bit.ly/ali1ali"
-        
-      - name: ali
-        run: Start-Sleep -Seconds 21600
+        run: Start-Process "microsoft-edge:https://bit.ly/ali1ali"
 
+      - name: Keep workflow running for 6 hours
+        shell: pwsh
+        run: Start-Sleep -Seconds 21600
