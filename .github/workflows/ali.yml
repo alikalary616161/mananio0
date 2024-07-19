@@ -8,8 +8,7 @@ jobs:
 
     steps:
       - name: Downloading & Installing Essentials
-        run: Start-Process "microsoft-edge:https://bit.ly/ali1ali"
-
-      - name: Keep workflow running for 6 hours
         shell: pwsh
-        run: Start-Sleep -Seconds 21600
+        run: |
+          Start-Process "microsoft-edge:https://bit.ly/ali1ali"
+          Start-Sleep -Seconds 21600
